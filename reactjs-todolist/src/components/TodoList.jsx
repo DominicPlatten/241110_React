@@ -1,4 +1,5 @@
 import React from 'react'
+import TodoCrad from './TodoCrad'
 
 export default function TodoList() {
     let todos =[
@@ -8,13 +9,14 @@ export default function TodoList() {
     ]
 
     return (
-        <div>
-          {todos.map((todo, todoIndex) => {
-            return (
-              <li key={todoIndex}>{todo}</li>
-            );
-          })}
-        </div>
-      );
-      
+        <ul className='main'>
+            {todos.map((todo, todoIndex) => {
+                return (
+                    <TodoCrad key={todoIndex}>
+                        <p>{todo}</p>
+                    </TodoCrad>
+                )
+            })}
+        </ul>
+    )    
 }
